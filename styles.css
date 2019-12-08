@@ -1,0 +1,79 @@
+* {
+    background-color: whiteSmoke;
+}
+
+header {
+    padding: 1.5em;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 1.7em;
+    margin: 0;
+}
+
+img {
+    border-radius: 50%;
+    grid-area: image;
+    display: block;
+    align-self: center;
+    margin: auto 20px;
+}
+
+#employees {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify: space-between;
+    margin: 0;
+}
+
+h2 {
+    grid-area: name;
+    font-size: 1em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+a {
+    grid-area: email;
+    align-self: center;
+}
+
+p {
+    grid-area: city;
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+h2,
+a,
+p {
+    background-color: white;
+}
+
+a,
+p {
+    font-size: .7em;
+}
+
+
+.employee {
+    background-color: white;
+    line-height: 0.5em;
+    float: left;
+    margin: 20px;
+    border: 1px gray solid;
+    border-radius: 5%;
+    height: 120px;
+    width: 27%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "image name"
+        "image email"
+        "image city";
+}
