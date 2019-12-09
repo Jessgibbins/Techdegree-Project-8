@@ -1,79 +1,140 @@
+/* ----- Universal Styles ----- */
+
 * {
-    background-color: whiteSmoke;
+    background-color: rgb(250, 250, 250);
 }
 
-header {
-    padding: 1.5em;
-    margin: 0;
-}
-
-header h1 {
-    font-size: 1.7em;
-    margin: 0;
-}
-
-img {
-    border-radius: 50%;
-    grid-area: image;
-    display: block;
-    align-self: center;
-    margin: auto 20px;
-}
-
-#employees {
-    list-style-type: none;
+body {
     width: 100%;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify: space-between;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
-h2 {
-    grid-area: name;
-    font-size: 1em;
-    margin-top: 2em;
-    margin-bottom: 0;
+/* ----- Header ----- */
+
+h1 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin: 2em;
 }
 
-a {
-    grid-area: email;
-    align-self: center;
+/* ----- Employee List ----- */
+
+.employee-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5em;
+    padding: 0 2em 0 2em;
 }
 
-p {
-    grid-area: city;
-    margin-bottom: 1em;
-    margin-top: 0;
-}
-
-h2,
-a,
-p {
+.employee-card,
+.employee-info {
     background-color: white;
 }
 
-a,
-p {
-    font-size: .7em;
-}
-
-
-.employee {
-    background-color: white;
-    line-height: 0.5em;
-    float: left;
-    margin: 20px;
-    border: 1px gray solid;
-    border-radius: 5%;
-    height: 120px;
-    width: 27%;
+.employee-card {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-        "image name"
-        "image email"
-        "image city";
+        'image name'
+        'image email'
+        'image city';
+    grid-row-gap: 0;
+    padding: 10px 0px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    height: 120px;
+    width: 100%;
+    min-width: 0;
+}
+
+img {
+    display: block;
+    border-radius: 50%;
+    height: 70%;
+    text-align: center;
+    margin: 1em;
+}
+
+.employeeImage {
+    grid-area: image;
+    align-self: center;
+}
+
+h3.employee-info {
+    grid-area: name;
+    align-self: end;
+    font-size: 1em;
+}
+
+p {
+    color: rgb(107, 107, 107);
+    font-size: 0.65em;
+}
+
+p:first-of-type.employee-info  {
+    grid-area: email;
+    align-self: center;
+}
+
+p:last-of-type.employee-info  {
+    grid-area: city;
+    align-self: flex-start;
+}
+
+.employee-info {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    max-width: 100%;
+}
+
+/* ----- Modal ----- */
+
+hr {
+    height: 1px;
+    background-color: rgb(107, 107, 107);
+    border: none;
+    margin: 2em 0;
+}
+
+.modal-container {
+    position: fixed;
+    background-color: rgba(73, 71, 71, 0.6);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    text-align: center;
+}
+
+.modalContent {
+    margin: 150px auto;
+    width: 30%;
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modalContent h3 {
+    color: black;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 160px;
+    font-size: 1.6em;
+    right: 37vw;
+}
+
+#closeBtn:hover,
+#closeBtn:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.modalContent img {
+    display: block;
+    margin: 0 auto;
 }
